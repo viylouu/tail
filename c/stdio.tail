@@ -1,0 +1,11 @@
+#c
+#include <stdio.h>
+#endc
+
+c static struct {
+    puts void = |text str| {
+#c
+        puts(text);
+#endc
+    }
+}

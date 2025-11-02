@@ -1,0 +1,23 @@
+#lib <c::stdlib>
+#lib <c::string>
+
+std static struct {
+    slice generic<T> struct {
+        data **T
+        size u32
+
+        slice = |amt u32| {
+            $data = c::malloc(sizeof(T) * amt);
+            $size = amt
+        }
+
+        resize void = |newsize u32| {
+            $data = c::realloc($data, newsize * sizeof(T))
+            $size = newsize
+        }
+
+        set_at void = |index u32, elem *T| {
+            c::memcpy($data + $index * sizeof(T), elem, sizeof(T))
+        }
+    }
+}

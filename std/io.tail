@@ -1,0 +1,7 @@
+#lib <c::stdio>
+
+io static struct {
+    puts cst void = |text str| {
+        c::puts(text);
+    }
+}

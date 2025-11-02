@@ -1,0 +1,28 @@
+#lib <std::slice>
+
+std static struct {
+    vector generic<T> struct {
+        data slice<T>
+        size u32
+        capac u32 : $data*.size
+
+        vector = |_| {
+            $data = new slice(0)
+            $size = 0
+            $capac = 0
+        }
+
+        append void = |elem *T| {
+            if ($size >= $capac) {
+                if ($capac == 0)
+                    $capac = 4
+                else
+                    $capac = $capac * 2
+
+                $data*.resize(newCapac)
+            }
+            $data*.set_at($size, elem)
+            $size++
+        }
+    }
+}

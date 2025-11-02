@@ -1,0 +1,17 @@
+#c
+#include <stdlib.h>
+#endc
+
+c static struct {
+    malloc *void = |size u32| {
+#c
+        return malloc(size);
+#endc
+    }
+
+    realloc *void = |mem *void, size u32| {
+#c
+        return realloc(mem, size);
+#endc
+    }
+}

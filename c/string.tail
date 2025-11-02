@@ -1,0 +1,11 @@
+#c
+#include <stdlib.h>
+#endc
+
+c static struct {
+    memcpy void = |pos *void, val *void, size u32| {
+#c
+        memcpy(pos, val, size);
+#endc
+    }
+}
