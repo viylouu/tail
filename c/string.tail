@@ -5,7 +5,7 @@
 c static struct {
     memcpy void = |pos *void, val *void, size u32| {
 #c
-        memcpy(pos, val, size);
+        memcpy((char*)pos, val, size);
 #endc
     }
 }
